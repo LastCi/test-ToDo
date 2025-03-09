@@ -1,0 +1,67 @@
+.task {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1.2rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    border-left: 6px solid var(--priority-color);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.task:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.task__field {
+    display: flex;
+    gap: 10px;
+    padding: 0.5rem 0;
+}
+
+.task__label {
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #555;
+    text-transform: uppercase;
+}
+
+.task__value {
+    font-size: 1rem;
+    color: #222;
+}
+
+/* Динамические цвета приоритета */
+.task[data-priority='high'] {
+    --priority-color: #d9534f;
+}
+
+.task[data-priority='medium'] {
+    --priority-color: #f0ad4e;
+}
+
+.task[data-priority='low'] {
+    --priority-color: #5bc0de;
+}
+
+/* Динамические цвета статуса */
+.task[data-status='done'] .task__value {
+    color: #28a745;
+}
+
+.task[data-status='in_progress'] .task__value {
+    color: #ffc107;
+}
+
+.task[data-status='todo'] .task__value {
+    color: #dc3545;
+}
+
+.overdue {
+    color: #dc3545;
+}

@@ -1,0 +1,12 @@
+.task-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.task-group__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+    gap: 10px;
+    justify-content: space-between;
+    max-width: 100%;
+}
